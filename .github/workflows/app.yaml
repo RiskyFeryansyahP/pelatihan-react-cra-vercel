@@ -22,7 +22,7 @@ jobs:
         prettier: true
 
     - name: Run Test
-      uses: CI=true yarn test
+      run: CI=true yarn test
 
     - name: Run Build
-      uses: yarn build
+      run: yarn build
