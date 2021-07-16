@@ -1,7 +1,7 @@
 name: React CRA
 on: pull_request
 jobs:
-  linter:
+  React-CI:
     name: Menjalankan Linter di React CRA
     runs-on: ubuntu-latest
     steps:
@@ -20,3 +20,9 @@ jobs:
       uses: wearerequired/lint-action@v1
       with:
         prettier: true
+
+    - name: Run Test
+      uses: CI=true yarn test
+
+    - name: Run Build
+      uses: yarn build
