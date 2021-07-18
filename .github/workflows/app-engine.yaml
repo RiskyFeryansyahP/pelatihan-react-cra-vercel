@@ -2,7 +2,8 @@ name: React CRA
 on: push
 jobs:
   deploy-react-cra-app-engine:
-    name: "Deploy React CRA ke Google App Engine"
+    name: Deploy React ke Google App Engine
+    runs-on: ubuntu-latest
     steps:
     - name: Check out Git repository
       uses: actions/checkout@v2
