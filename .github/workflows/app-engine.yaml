@@ -1,0 +1,29 @@
+name: React CRA
+on: push
+jobs:
+  deploy-react-cra-app-engine:
+  name: "Deploy React CRA ke Google App Engine"
+  steps:
+  - name: Check out Git repository
+    uses: actions/checkout@v2
+
+  - name: Set up Node.js
+    uses: actions/setup-node@v1
+    with:
+      node-version: 12
+
+  - name: Install Node.js dependencies
+    run: yarn
+
+  - name: Run Build
+    run: yarn build
+
+  - name: "Inisiasi Google App Engine"
+  - id: deploy
+    uses: google-github-actions/deploy-appengine@main
+    with:
+      credentials: ${{ secrets.GCP_SA_CREDENTIAL }}
+
+  # Example of using the output
+  - id: test
+    run: curl "${{ steps.deploy.outputs.url }}"
