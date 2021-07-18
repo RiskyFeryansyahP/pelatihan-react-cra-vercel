@@ -1,7 +1,7 @@
 name: React CRA
 on: push
-deploy-react-cra:
-  React-CI:
+jobs:
+  deploy-react-cra:
     name: Menjalankan Linter di React CRA
     runs-on: ubuntu-latest
     steps:
