@@ -1,4 +1,4 @@
-name: React CRA
+name: Deploy App to Google App Engine
 on: push
 jobs:
   deploy-react-cra-app-engine:
